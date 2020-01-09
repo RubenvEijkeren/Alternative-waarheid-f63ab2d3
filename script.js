@@ -5,7 +5,12 @@ function checkAnswers(){
 	var y = 0;
 	var inputs = document.querySelectorAll("input");
 	for (i in inputs){
-		if (i >= 0 && i <= 9 && (inputs[i].value == corr[i] || corr[i].includes(inputs[i].value))){
+		if (i >= 0 && i <= 9 && inputs[i].value == corr[i]){
+			console.log(inputs[i].value);
+			inputs[i].style.backgroundColor = "#24FF00";
+			x++;
+		}
+		else if (i >= 0 && i <= 9 && corr[i].includes(inputs[i].value) && inputs[i].value.length > 1){
 			console.log(inputs[i].value);
 			inputs[i].style.backgroundColor = "#24FF00";
 			x++;
